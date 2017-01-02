@@ -1,0 +1,278 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12502,        269]
+NotebookOptionsPosition[     12042,        250]
+NotebookOutlinePosition[     12519,        269]
+CellTagsIndexPosition[     12476,        266]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"branches", "[", 
+    RowBox[{
+    "x0_", ",", "y0_", ",", "maximumDepth_", ",", "maximumNfrucation_", ",", 
+     " ", "maximumDeviation_", ",", "initialLean_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", " ", 
+      RowBox[{
+       RowBox[{"x", "=", "x0"}], ",", 
+       RowBox[{"y", "=", "y0"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"depth", "=", "maximumDepth"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Nfrucation", "=", "maximumNfrucation"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"deviation", "=", "maximumDeviation"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"lean", "=", "initialLean"}], ",", "\[IndentingNewLine]", 
+       "angle", ",", "nfrucation", ",", "r", ",", "x1", ",", "y1"}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"depth", ">", "0"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+        "Play", " ", "around", " ", "with", " ", "these", " ", "two", " ", 
+         "to", " ", "attain", " ", "the", " ", "desired", " ", "tree", " ", 
+         "structure"}], " ", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Angle", " ", "of", " ", "the", " ", "branch"}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"angle", "=", 
+         RowBox[{"lean", "+", 
+          RowBox[{"deviation", "\[Times]", 
+           RowBox[{"Random", "[", 
+            RowBox[{"Real", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", ".5"}], ",", ".5"}], "}"}]}], "]"}]}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Length", " ", "of", " ", "the", " ", "branch"}], " ", 
+         "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"r", "=", 
+         RowBox[{
+          RowBox[{"Log", "[", "depth", "]"}], "\[Times]", 
+          RowBox[{"Random", "[", 
+           RowBox[{"Real", ",", 
+            RowBox[{"{", 
+             RowBox[{".5", ",", "1"}], "}"}]}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Number", " ", "of", " ", "branches"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"nfrucation", "=", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "Nfrucation"}], "}"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Self", "-", "explanatory"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"x1", "=", 
+         RowBox[{"x", "+", 
+          RowBox[{"r", " ", 
+           RowBox[{"Sin", "[", "angle", "]"}]}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"y1", "=", 
+         RowBox[{"y", "+", 
+          RowBox[{"r", " ", 
+           RowBox[{"Cos", "[", "angle", "]"}]}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Append", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Table", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"branches", "[", "\[IndentingNewLine]", 
+              RowBox[{"(*", " ", 
+               RowBox[{"New", " ", "initial", " ", "coordinates"}], " ", 
+               "*)"}], "\[IndentingNewLine]", 
+              RowBox[{"x1", ",", "y1", ",", "\[IndentingNewLine]", 
+               RowBox[{"(*", " ", 
+                RowBox[{"Decremented", " ", "depth"}], " ", "*)"}], 
+               "\[IndentingNewLine]", 
+               RowBox[{"depth", "-", "1"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"(*", " ", 
+                RowBox[{
+                "Still", " ", "the", " ", "same", " ", "maximum", " ", 
+                 "mumber", " ", "of", " ", "branches", " ", "at", " ", "each",
+                  " ", "split"}], " ", "*)"}], "\[IndentingNewLine]", 
+               "Nfrucation", ",", "\[IndentingNewLine]", 
+               RowBox[{"(*", " ", 
+                RowBox[{
+                "Still", " ", "the", " ", "same", " ", "meximum", " ", 
+                 "deviation", " ", "of", " ", "each", " ", "new", " ", 
+                 "branch"}], " ", "*)"}], "\[IndentingNewLine]", "deviation", 
+               ",", "\[IndentingNewLine]", 
+               RowBox[{"(*", " ", 
+                RowBox[{
+                "Angle", " ", "of", " ", "the", " ", "current", " ", "branch",
+                  " ", "is", " ", "the", " ", "initial", " ", "lean", " ", 
+                 "of", " ", "the", " ", "next", " ", "branch"}], " ", "*)"}], 
+               "\[IndentingNewLine]", "angle"}], "\[IndentingNewLine]", "]"}],
+              ",", "\[IndentingNewLine]", 
+             RowBox[{"{", "nfrucation", "}"}]}], "\[IndentingNewLine]", "]"}],
+            ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{"(*", " ", 
+              RowBox[{"Play", " ", "around", " ", "with", " ", "this"}], " ", 
+              "*)"}], "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Thickness", "[", 
+               FractionBox["depth", "300."], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"CapForm", "[", "\"\<Round\>\"", "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"x", ",", " ", "y"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"x1", ",", "y1"}], "}"}]}], "}"}], "]"}]}], 
+             "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", "]"}]}], 
+          "\[IndentingNewLine]", "]"}], "//", "Flatten"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", "}"}]}], "\[IndentingNewLine]", "]"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.691286559538877*^9, 3.691286622541201*^9}, {
+   3.691286654635022*^9, 3.691286674793171*^9}, {3.691286720332884*^9, 
+   3.691286751689642*^9}, {3.691286791062462*^9, 3.691286896782072*^9}, {
+   3.69128694813759*^9, 3.691287115598075*^9}, {3.691287161800745*^9, 
+   3.6912871623767767`*^9}, {3.691287229625864*^9, 3.691287235513908*^9}, 
+   3.6912872835727873`*^9, {3.691287332475491*^9, 3.691287337303842*^9}, {
+   3.691287407730618*^9, 3.6912874606853333`*^9}, {3.691287515097245*^9, 
+   3.691287545997877*^9}, {3.6912876266643057`*^9, 3.691287690433876*^9}, {
+   3.691287746187827*^9, 3.691287749565392*^9}, {3.691287799425324*^9, 
+   3.691287841467278*^9}, 3.691287888110915*^9, {3.6912879331261587`*^9, 
+   3.691287964823666*^9}, {3.691288059841064*^9, 3.6912881094923058`*^9}, {
+   3.691288205210828*^9, 3.691288268453717*^9}, {3.691288448814863*^9, 
+   3.691288522142475*^9}, {3.6912885720727243`*^9, 3.691288597094151*^9}, {
+   3.691288630116486*^9, 3.6912886394218397`*^9}, {3.691288732110282*^9, 
+   3.69128873728183*^9}, {3.691288775714192*^9, 3.691288829401863*^9}, {
+   3.691288866621463*^9, 3.6912889159629908`*^9}, 3.69128900399446*^9, {
+   3.6916095013265247`*^9, 3.691609542609105*^9}, {3.691609797744027*^9, 
+   3.69160981456322*^9}, {3.691610024049101*^9, 3.691610029752239*^9}, {
+   3.691610065831687*^9, 3.691610117093822*^9}, {3.6916102251653643`*^9, 
+   3.691610225636775*^9}, {3.691610456970132*^9, 3.691610513858677*^9}, {
+   3.691610641072941*^9, 3.691610644016779*^9}, {3.691610728012144*^9, 
+   3.691610732328706*^9}, {3.691610780644459*^9, 3.691610783961937*^9}, {
+   3.691610988244546*^9, 3.691610991912552*^9}, {3.691611317503295*^9, 
+   3.691611386143497*^9}, {3.691611430773119*^9, 3.6916114339467297`*^9}, {
+   3.6916114833898067`*^9, 3.691611574024544*^9}, {3.691618295978397*^9, 
+   3.691618297080798*^9}, {3.69231765093476*^9, 3.692317653946864*^9}, {
+   3.692317702148263*^9, 3.692317702722948*^9}, {3.692318102177225*^9, 
+   3.692318145196253*^9}, {3.6923183389578323`*^9, 3.692318339524291*^9}, {
+   3.692318373737151*^9, 3.69231840829443*^9}, {3.692318440197877*^9, 
+   3.692318446570058*^9}, {3.6923185118117247`*^9, 3.692318511923724*^9}, {
+   3.692318549729909*^9, 3.692318554993352*^9}, {3.69231963637818*^9, 
+   3.692319705878203*^9}, {3.6923197781782713`*^9, 3.6923198168939953`*^9}, {
+   3.6923198846060677`*^9, 3.692319902868576*^9}, {3.692319944434347*^9, 
+   3.6923200278406973`*^9}, {3.692320353601049*^9, 3.692320355165902*^9}, 
+   3.6923204036659603`*^9, {3.6923205127915773`*^9, 3.692320539936351*^9}, {
+   3.692320576610901*^9, 3.692320606048746*^9}, {3.692320975764803*^9, 
+   3.6923210668873453`*^9}, {3.6923211034271107`*^9, 3.692321136401465*^9}, {
+   3.692321213560906*^9, 3.6923213386341753`*^9}, {3.6923220095358667`*^9, 
+   3.692322065693491*^9}, {3.6923221866601954`*^9, 3.69232223038304*^9}, {
+   3.692322510243354*^9, 3.692322519116333*^9}, {3.692323043051024*^9, 
+   3.6923232645931473`*^9}, 3.6923236725525827`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Show", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"branches", "[", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Initial", " ", "coordinates"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"0", ",", "0", ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", "Depth", " ", "*)"}], "\[IndentingNewLine]", "11", 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "Maximum", " ", "number", " ", "of", " ", "branches", " ", "at", " ", 
+        "each", " ", "split"}], " ", "*)"}], "\[IndentingNewLine]", "2", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"Deviation", " ", "range"}], ",", " ", 
+        RowBox[{
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "45"}], "\[Degree]"}], ",", " ", 
+           RowBox[{"45", "\[Degree]"}]}], "]"}], " ", "of", " ", "every", " ",
+          "new", " ", "branch"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"90", "\[Degree]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Initial", " ", "lean", " ", "angle"}], " ", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"0", "\[Degree]"}]}], "\[IndentingNewLine]", "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"AspectRatio", "\[Rule]", "1"}]}], "\[IndentingNewLine]", "]"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.692320058905211*^9, 3.6923201750723*^9}, {
+   3.692320377799643*^9, 3.692320388401185*^9}, 3.692322192010046*^9}],
+
+Cell[BoxData[
+ RowBox[{"Table", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Show", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"branches", "[", 
+      RowBox[{"0", ",", "0", ",", "11", ",", "2", ",", 
+       RowBox[{"90", "\[Degree]"}], ",", 
+       RowBox[{"0", "\[Degree]"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"AspectRatio", "\[Rule]", "1"}]}], "\[IndentingNewLine]", "]"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", "9", "}"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.6916110246646233`*^9, 3.691611038182857*^9}, {
+   3.691611106513934*^9, 3.691611145560401*^9}, {3.6916111916975517`*^9, 
+   3.691611207983984*^9}, 3.692317795583353*^9, {3.692319644972172*^9, 
+   3.692319650790476*^9}}]
+},
+WindowSize->{1066, 777},
+WindowMargins->{{37, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.25, 1.25 Inherited],
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 8993, 172, 1088, "Input"],
+Cell[9553, 194, 1650, 36, 338, "Input"],
+Cell[11206, 232, 832, 16, 167, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
