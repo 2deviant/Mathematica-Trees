@@ -86,11 +86,10 @@ Show[
   11,
   (* Maximum number of branches at each split *)
   2,
-  (* Deviation range, [-45\[Degree], 
-  45\[Degree]] of every new branch *)
+  (* Deviation range, [-45˚, 45˚], of every new branch *)
   90 \[Degree],
   (* Initial lean angle *)
-  0 \[Degree]
+  0
   ],
  PlotRange -> All,
  AspectRatio -> 1
@@ -101,7 +100,7 @@ or, for a sampling of trees:
 ```Mathematica
 Table[
  Show[
-  branches[0, 0, 11, 2, 90 \[Degree], 0 \[Degree]],
+  branches[0, 0, 11, 2, 90 \[Degree], 0],
   PlotRange -> All,
   AspectRatio -> 1
  ],
