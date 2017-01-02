@@ -16,11 +16,11 @@ Most who implement this algorithm are disappointed because the trees do not look
 
 The inevitable zig-zag fest is due to a subtle yet physically important detail: the angle of the branch is not a mere random number, it is a random **deviation from the branch upon which it grows**.  The angle is given by:
 
-![](https://chart.googleapis.com/chart?cht=tx&chl=\\theta_n%20=%20\\theta_{n-1}%20%2b%20random(-\\alpha,%20\\alpha))
+![](https://chart.googleapis.com/chart?cht=tx&chl=\\theta_n%20=%20\\theta_{n-1}%20%2b%20random(-\\alpha,\\,\\alpha))
 
 **not** by:
 
-![](https://chart.googleapis.com/chart?cht=tx&chl=\\theta_n%20=%20random(-\\alpha,%20\\alpha))
+![](https://chart.googleapis.com/chart?cht=tx&chl=\\theta_n%20=%20random(-\\alpha,\\,\\alpha))
 
 This correction alone turns what wouldn't even pass for drunken lighting into tree-looking objects.  Variation of length and thickness of the branches play an important role as well.
 
