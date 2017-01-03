@@ -6,7 +6,7 @@ Described here is a primitive, fractal method of generating trees using *Mathema
 The algorithm is quite simple:
 
 1. Draw a line segment of [somewhat] random length at a [somewhat] random angle.
-1. Decide if the tree is going to bifrucate at this point -- *i.e.* pick random integer between 1 and 2.
+1. Decide if the tree is going to bifurcate at this point -- *i.e.* pick random integer between 1 and 2.
 1. Call the the same routine which performed both of the above for each of new branches (either 1 or 2).
 1. Repeat until the desired depth is achieved.
 
@@ -26,13 +26,13 @@ This correction alone turns what wouldn't even pass for drunken lighting into tr
 
 ## Algorithm
 ```Mathematica
-branches[x0_, y0_, maximumDepth_, maximumNfrucation_, maximumDeviation_, initialLean_] := Module[{
+branches[x0_, y0_, maximumDepth_, maximumNfurcation_, maximumDeviation_, initialLean_] := Module[{
     x = x0, y = y0,
     depth = maximumDepth,
-    Nfrucation = maximumNfrucation,
+    Nfurcation = maximumNfurcation,
     deviation = maximumDeviation,
     lean = initialLean,
-    angle, nfrucation, r, x1, y1
+    angle, nfurcation, r, x1, y1
     },
     If[depth > 0,
     (* Play around with these two to attain the desired tree structure *)
@@ -42,7 +42,7 @@ branches[x0_, y0_, maximumDepth_, maximumNfrucation_, maximumDeviation_, initial
     r = Log[depth]*Random[Real, {.5, 1}];
     
     (* Number of branches *)
-    nfrucation = RandomInteger[{1, Nfrucation}];
+    nfurcation = RandomInteger[{1, Nfurcation}];
     (* Self-explanatory *)
     x1 = x + r Sin[angle];
     y1 = y + r Cos[angle];
@@ -53,14 +53,14 @@ branches[x0_, y0_, maximumDepth_, maximumNfrucation_, maximumDeviation_, initial
         x1, y1,
         (* Decremented depth *)
         depth - 1,
-        (* Still the same maximum mumber of branches at each split *)
-        Nfrucation,
-        (* Still the same meximum deviation of each new branch *)
+        (* Still the same maximum number of branches at each split *)
+        Nfurcation,
+        (* Still the same maximum deviation of each new branch *)
         deviation,
         (* Angle of the current branch is the initial lean of the next branch *)
         angle
         ],
-       {nfrucation}
+       {nfurcation}
        ],
       Graphics[
        {

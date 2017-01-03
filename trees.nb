@@ -23,7 +23,7 @@ Cell[BoxData[
   RowBox[{
    RowBox[{"branches", "[", 
     RowBox[{
-    "x0_", ",", "y0_", ",", "maximumDepth_", ",", "maximumNfrucation_", ",", 
+    "x0_", ",", "y0_", ",", "maximumDepth_", ",", "maximumNfurcation_", ",", 
      " ", "maximumDeviation_", ",", "initialLean_"}], "]"}], ":=", 
    RowBox[{"Module", "[", 
     RowBox[{
@@ -32,12 +32,12 @@ Cell[BoxData[
        RowBox[{"x", "=", "x0"}], ",", 
        RowBox[{"y", "=", "y0"}], ",", "\[IndentingNewLine]", 
        RowBox[{"depth", "=", "maximumDepth"}], ",", "\[IndentingNewLine]", 
-       RowBox[{"Nfrucation", "=", "maximumNfrucation"}], ",", 
+       RowBox[{"Nfurcation", "=", "maximumNfurcation"}], ",", 
        "\[IndentingNewLine]", 
        RowBox[{"deviation", "=", "maximumDeviation"}], ",", 
        "\[IndentingNewLine]", 
        RowBox[{"lean", "=", "initialLean"}], ",", "\[IndentingNewLine]", 
-       "angle", ",", "nfrucation", ",", "r", ",", "x1", ",", "y1"}], 
+       "angle", ",", "nfurcation", ",", "r", ",", "x1", ",", "y1"}], 
       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
      RowBox[{"If", "[", 
       RowBox[{
@@ -74,10 +74,10 @@ Cell[BoxData[
         RowBox[{"(*", " ", 
          RowBox[{"Number", " ", "of", " ", "branches"}], " ", "*)"}], 
         "\[IndentingNewLine]", 
-        RowBox[{"nfrucation", "=", 
+        RowBox[{"nfurcation", "=", 
          RowBox[{"RandomInteger", "[", 
           RowBox[{"{", 
-           RowBox[{"1", ",", "Nfrucation"}], "}"}], "]"}]}], ";", 
+           RowBox[{"1", ",", "Nfurcation"}], "}"}], "]"}]}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"(*", " ", 
          RowBox[{"Self", "-", "explanatory"}], " ", "*)"}], 
@@ -109,9 +109,9 @@ Cell[BoxData[
                RowBox[{"(*", " ", 
                 RowBox[{
                 "Still", " ", "the", " ", "same", " ", "maximum", " ", 
-                 "mumber", " ", "of", " ", "branches", " ", "at", " ", "each",
+                 "number", " ", "of", " ", "branches", " ", "at", " ", "each",
                   " ", "split"}], " ", "*)"}], "\[IndentingNewLine]", 
-               "Nfrucation", ",", "\[IndentingNewLine]", 
+               "Nfurcation", ",", "\[IndentingNewLine]", 
                RowBox[{"(*", " ", 
                 RowBox[{
                 "Still", " ", "the", " ", "same", " ", "meximum", " ", 
@@ -125,7 +125,7 @@ Cell[BoxData[
                  "of", " ", "the", " ", "next", " ", "branch"}], " ", "*)"}], 
                "\[IndentingNewLine]", "angle"}], "\[IndentingNewLine]", "]"}],
               ",", "\[IndentingNewLine]", 
-             RowBox[{"{", "nfrucation", "}"}]}], "\[IndentingNewLine]", "]"}],
+             RowBox[{"{", "nfurcation", "}"}]}], "\[IndentingNewLine]", "]"}],
             ",", "\[IndentingNewLine]", 
            RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
             RowBox[{"{", "\[IndentingNewLine]", 
