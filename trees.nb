@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      9109,        222]
-NotebookOptionsPosition[      8650,        203]
-NotebookOutlinePosition[      9127,        222]
-CellTagsIndexPosition[      9084,        219]
+NotebookDataLength[      9110,        222]
+NotebookOptionsPosition[      8651,        203]
+NotebookOutlinePosition[      9128,        222]
+CellTagsIndexPosition[      9085,        219]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -65,7 +65,7 @@ Cell[BoxData[
          "*)"}], "\[IndentingNewLine]", 
         RowBox[{"r", "=", 
          RowBox[{
-          RowBox[{"Log", "[", "depth", "]"}], "\[Times]", 
+          RowBox[{"Sqrt", "[", "depth", "]"}], "\[Times]", 
           RowBox[{"Random", "[", 
            RowBox[{"Real", ",", 
             RowBox[{"{", 
@@ -221,9 +221,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 5987, 131, 1088, "Input"],
-Cell[6547, 153, 1506, 34, 368, "Input"],
-Cell[8056, 189, 590, 12, 167, "Input"]
+Cell[557, 20, 5988, 131, 1088, "Input"],
+Cell[6548, 153, 1506, 34, 368, "Input"],
+Cell[8057, 189, 590, 12, 167, "Input"]
 }
 ]
 *)

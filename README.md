@@ -39,7 +39,7 @@ branches[x0_, y0_, maximumDepth_, maximumNfurcation_, maximumDeviation_, initial
     (* Angle of the branch *)
     angle = lean + deviation*Random[Real, {-.5, .5}];
     (* Length of the branch *)
-    r = Log[depth]*Random[Real, {.5, 1}];
+    r = Sqrt[depth]*Random[Real, {.5, 1}];
     
     (* Number of branches *)
     nfurcation = RandomInteger[{1, Nfurcation}];
