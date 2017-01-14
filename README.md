@@ -1,5 +1,5 @@
 # Trees
-Described here is a primitive, fractal method of generating trees using *Mathematica*.  Trees like this:
+Described here is a primitive, fractal method of generating trees using *Mathematica* and Python.  Python code parallels the *Mathematica* code and output a *Mathematica* graphics object.  Trees like this:
 
 ![](trees.png)
 
@@ -106,4 +106,10 @@ Table[
  ],
  {9}
 ]
+```
+## Python
+Modify the [source code](trees.py) and pipe the output into an **nb** file:
+
+```bash
+python trees.py > tree.nb
 ```
