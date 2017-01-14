@@ -64,7 +64,7 @@ def main():
         # initial lean [bias] is zero degrees
         0
         )
-    print converters.to_mathematica(tree)
+    print(converters.to_mathematica(tree))
 
 if __name__ == '__main__':
     main()

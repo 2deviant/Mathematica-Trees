@@ -1,5 +1,5 @@
 # Trees
-Described here is a primitive, fractal method of generating trees using *Mathematica* and Python.  Python code parallels the *Mathematica* code and output a *Mathematica* graphics object.  Trees like this:
+Described here is a primitive, fractal method of generating trees using *Mathematica* and Python.  Python code parallels the *Mathematica* code and outputs a *Mathematica* graphics object.  Trees like this:
 
 ![](trees.png)
 
